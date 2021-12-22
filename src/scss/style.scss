@@ -1,0 +1,270 @@
+/*Colors
+Green: #54be90
+White: #ffffff
+Light grey: #ebebeb
+Text grey: #444444
+Dark grey: #232323
+
+*/
+@import "colors.scss";
+::placeholder {
+  color: $white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+body {
+  background-color: black;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+
+  #main {
+    display: block;
+    background-color: $white;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+
+    @import "nav.scss";
+    @import "header.scss";
+    @import "sales.scss";
+    @import "skills.scss";
+  }
+}
+
+/*MY portfolio*/
+
+#fetch-1 {
+  height: 100%;
+  h1 {
+    width: 95%;
+    padding: 5px;
+  }
+
+  img {
+    width: 95%;
+  }
+  p {
+    width: 95%;
+  }
+}
+
+.my-port {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #54be90;
+  width: 100%;
+  height: 800px;
+}
+.my--portfolio--header {
+  color: white;
+  text-align: center;
+}
+.main__portfolio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.my--port--pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  width: 30%;
+  height: 320px;
+  padding: 10px;
+  border: 10px solid #54be90;
+}
+.small--pic {
+  width: 100%;
+}
+.small--pic > img {
+  height: 150px;
+  width: 100%;
+  background-position: center;
+  border-image-width: 50%;
+}
+.my--port--text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+}
+.my--port--text h3 {
+  padding-top: 30px;
+  padding-right: 120px;
+}
+
+.my--port--butt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.my--port--butt button {
+  background-color: #54be90;
+  width: 100px;
+  height: 20px;
+  margin-top: 20px;
+}
+
+.button--pic {
+  background-color: black;
+}
+
+.about__me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  width: 100%;
+  height: 400px;
+}
+.about__me > h2 {
+  font-size: 40px;
+}
+
+.about--pic--text {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 300px;
+}
+
+.image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.about--p {
+  width: 500px;
+  padding-left: 50px;
+  line-height: 25px;
+}
+.underline {
+  text-decoration: underline #54be90 10px;
+}
+
+.about--p button {
+  background-color: #54be90;
+  color: #ffffff;
+  border: none;
+  width: 150px;
+}
+.about--p h4 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.find--me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #232323;
+  color: #ffffff;
+  height: 300px;
+  width: 100%;
+}
+.find--ico {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  color: #ffffff;
+}
+
+.contact--me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  background-color: #54be90;
+  color: #ffffff;
+}
+
+.my--names input,
+.my--email input {
+  background-color: #54be90;
+  border: none;
+  border-bottom: #ffffff 1px solid;
+  color: #ffffff;
+  width: 300px;
+  padding: 10px;
+  margin-right: 20px;
+}
+.my--mesage {
+  padding-top: 20px;
+}
+.my--mesage p {
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 5px;
+}
+
+.contact--me button {
+  background-color: #232323;
+  color: #ffffff;
+  border: none;
+  height: 30px;
+  width: 645px;
+  font-size: larger;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebebeb;
+  height: 400px;
+}
+.nice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 100%;
+  background-color: #ebebeb;
+}
+
+.blue--line--f {
+  background-color: #54be90;
+  height: 25px;
+  width: 25%;
+}
+.nice h3 {
+  color: #232323;
+  font-size: 40px;
+  padding: 20px;
+  width: 50%;
+}
+
+footer p {
+  color: #232323;
+  padding: 20px;
+}
+.ico--end {
+  color: gray;
+}

@@ -1,0 +1,67 @@
+@import "colors.scss";
+
+.sales {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .sales__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+
+    p {
+      margin-top: 20px;
+      color: $dark-background;
+    }
+  }
+  .white-line-halfcircle {
+    position: relative;
+    background-color: $white;
+    height: 40px;
+    width: 100%;
+    top: 40px;
+  }
+  .black__cover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark-background;
+    height: 100%;
+    width: 100%;
+    .one__halfcircle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 25%;
+      .halfcircle {
+        display: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: $white;
+        border-radius: 100%;
+      }
+      h3 {
+        padding-top: 20px;
+        color: $green-theme;
+        padding-bottom: 20px;
+        font-size: 20px;
+      }
+      p {
+        color: $light-grey;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
