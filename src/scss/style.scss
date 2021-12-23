@@ -53,6 +53,9 @@ body {
   }
 }
 
+#fetch-3 {
+  height: 100%;
+}
 .my-port {
   display: flex;
   flex-direction: column;
@@ -124,9 +127,9 @@ body {
   margin-top: 20px;
 }
 
-.button--pic {
+/* .button--pic {
   background-color: black;
-}
+} */
 
 .about__me {
   display: flex;
