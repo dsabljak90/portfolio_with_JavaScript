@@ -1,19 +1,45 @@
-const fetchPlace = document.getElementById("fetch-1");
+// Navigation manipulation
+let scrollPosition = 0;
+console.log(window.pageYOffset);
+const removeElement = function () {
+  const currentPosition = window.pageYOffset;
+  if (currentPosition > scrollPosition) {
+    document.getElementById("nav").classList.remove("nav");
+    document.getElementById("nav").classList.add("hide");
+  } else {
+    document.getElementById("nav").classList.remove("hide");
+    document.getElementById("nav").classList.add("nav");
+  }
+  scrollPosition = currentPosition <= 0 ? 0 : currentPosition;
+};
+
+//console.log();
+window.addEventListener("scroll", removeElement, 5000);
+
+// Buttons
+
+const contactButton = document.getElementById("contactButton");
+
+const scroll = function (where) {
+  document.getElementById(where).scrollIntoView({
+    behavior: "smooth",
+  });
+};
+contactButton.onclick = function () {
+  scroll("contact");
+};
+// News API
 
 // API Sourse https://newsapi.org/ lust add & and specificaton from API descripton.
+
+const fetchPlace = document.getElementById("fetch-1");
 fetch(
   `https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&language=en&apiKey=0dc1e3eba8ec482b8a93b4c3b6d7eecc`
 )
   .then((resp) => resp.json())
   .then((json) => {
-    console.log(json.articles);
-
     fetchPlace.innerHTML = `<img src='${json.articles[0].urlToImage}'/> <h1>${json.articles[0].title}</h1> <p>${json.articles[0].description}</p> <a href='${json.articles[0].url}' target='_blank'>Read More </a>`;
   });
-
-console.log(fetchPlace);
-
-// Do the reafing part at read more, pop window.
 
 // Wether API
 const fetchPlaceTwo = document.getElementById("fetch-2");
@@ -24,22 +50,56 @@ fetch(
 )
   .then((resp) => resp.json())
   .then((json) => {
-    console.log(json);
     const img = json.current.condition.icon;
-    fetchPlaceTwo.style.background = "url(" + img + ")";
-    // fetchPlaceTwo.style.backgroundRepeat = "no-repeat";
+    // fetchPlaceTwo.style.background = "url(" + img + ")";
+    fetchPlaceTwo.style.backgroundRepeat = "no-repeat, cover";
 
-    console.log(fetchPlaceTwo);
-    fetchPlaceTwo.innerHTML = `<h1>${json.location.name}, ${json.location.country}
-    </h1><h3>${json.current.condition.text}</h3> <p> Humidity:${json.current.humidity}</p><p> Temperature:${json.current.temp_c}</p><p> wind:${json.current.wind_kph}</p>`;
+    fetchPlaceTwo.innerHTML = `<img src='${img}'/><h1>${json.location.name}, ${json.location.country}
+    </h1><h3>${json.current.condition.text}</h3> <p> Humidity : ${json.current.humidity} %</p><p> Temperature : ${json.current.temp_c} C&#176</p><p> Wind: ${json.current.wind_kph} kph</p>`;
   });
-
 //
 // Stock API
+
+// Setting date alternative
+
+const currentDay = String(new Date().getDate() - 1);
+const currentMonth = String(new Date().getMonth() + 1);
+const currentYear = String(new Date().getFullYear());
+const lastDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
 const fetchPlaceThree = document.getElementById("fetch-3");
-const stock = document.getElementsByName("stock").value;
-console.log(stock);
+function setStock() {
+  const stockList = document.getElementById("stocks");
+  const stockDate = document.getElementById("stockDate");
+  const stock = stockList.value;
+  const date = stockDate.value || lastDate;
+  console.log(date);
+  // API Source https://newsapi.org/ lust add & and specificaton from API descripton.
+
+  fetch(
+    `https://api.polygon.io/v1/open-close/${stock}/${date}?adjusted=true&apiKey=8TvIu_PxBWFhvO4vQ8iTPtCAf4pYF4Gn`
+  )
+    .then((resp) => resp.json())
+    .then((json) => {
+      console.log(json);
+      json.status === "OK"
+        ? (fetchPlaceThree.innerHTML = `<h1>${json.symbol}</h1>
+    <p>Open:${json.open}</p>
+    <p>Close:${json.close}</p>
+    <p>High:${json.high}</p>
+    <p>Low:${json.low}</p>  
+    `)
+        : (fetchPlaceThree.innerHTML = `<h1> The chosen day NYSE was closed.</h1> <h1> Please chose another date.</h1>`);
+    });
+}
+
+const stockList = (document.getElementById("setStockButton").onclick =
+  function () {
+    setStock();
+  });
+
 // API Sourse https://newsapi.org/ lust add & and specificaton from API descripton.
+
 fetch(
   `https://api.polygon.io/v1/open-close/MSFT/2021-12-21?adjusted=true&apiKey=8TvIu_PxBWFhvO4vQ8iTPtCAf4pYF4Gn`
 )
@@ -48,12 +108,14 @@ fetch(
     console.log(json);
 
     console.log(fetchPlaceThree);
-    fetchPlaceThree.innerHTML = `<h1>${json.symbol}</h1>
+    fetchPlaceThree.innerHTML = `
+    
+    <h1>NYSE Info</h1>
+    <h1>${json.symbol}</h1>
     <p>Open:${json.open}</p>
     <p>Close:${json.close}</p>
     <p>High:${json.high}</p>
     <p>Low:${json.low}</p>
-    
     `;
   });
 

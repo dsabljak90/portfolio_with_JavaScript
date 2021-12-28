@@ -1,0 +1,51 @@
+@import "colors.scss";
+.about__me {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: $light-grey;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  h2 {
+    font-size: 40px;
+    padding: 2rem;
+  }
+  .about--pic--text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+    }
+    .about--p {
+      width: 100%;
+      padding-left: 50px;
+      line-height: 25px;
+      .underline {
+        text-decoration: underline $green-theme 5px;
+      }
+      button {
+        background-color: $green-theme;
+        color: $white;
+        border: none;
+        width: 150px;
+        height: 30px;
+        margin-bottom: 2rem;
+        &:hover {
+          background-color: $text-grey;
+        }
+      }
+      h4 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

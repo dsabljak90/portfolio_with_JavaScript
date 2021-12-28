@@ -1,0 +1,132 @@
+@import "colors.scss";
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $green-theme;
+  width: 100%;
+  height: 600px;
+  h2 {
+    color: $white;
+    text-align: center;
+    padding: 2rem;
+  }
+  .main__portfolio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $dark-background;
+    height: 75%;
+    .my--port--box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $white;
+      width: 30%;
+      height: 90%;
+
+      //border: 1px solid $text-grey;
+    }
+    #fetch-1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      height: 100%;
+      img {
+        width: 95%;
+        height: 40%;
+        padding-bottom: 1rem;
+      }
+      h1 {
+        width: 95%;
+        padding-bottom: 1rem;
+      }
+      p {
+        width: 95%;
+      }
+      a {
+        text-decoration: none;
+        color: $text-grey;
+        font-size: larger;
+        &:hover {
+          background-color: $dark-background;
+          color: $green-theme;
+          padding: 5px;
+        }
+      }
+    }
+    #fetch-2 {
+      background-color: $dark-background;
+      color: $light-grey;
+      img {
+        width: 150px;
+      }
+      h1 {
+        padding-bottom: 1rem;
+      }
+      h3 {
+        padding-bottom: 2rem;
+      }
+      p {
+        padding-bottom: 1.5rem;
+        font-size: larger;
+      }
+    }
+    #stocks--box {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      #fetch-3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 60%;
+        h1 {
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+      #stockSection {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 50%;
+        width: 100%;
+
+        background-color: $text-grey;
+        color: $light-grey;
+        #stocks,
+        #stockDate {
+          height: 2rem;
+          width: 85%;
+          font-size: 1rem;
+          background-color: $green-theme;
+          border: none;
+        }
+        #setStockButton {
+          height: 2rem;
+          width: 85%;
+          font-size: 1rem;
+          background-color: $green-theme;
+          border: none;
+          &:hover {
+            background-color: $dark-background;
+            color: $light-grey;
+          }
+        }
+        label {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

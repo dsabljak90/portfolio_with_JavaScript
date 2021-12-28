@@ -13,9 +13,9 @@
     <title>Aneta Webbie</title>
   </head>
 
-  <body>
+  <body id="body">
     <section id="main">
-      <section class="nav">
+      <section id="nav" class="nav">
         <ul>
           <a href="#main"><li>HOME</li></a>
           <a href="#skils"><li>SKILS</li></a>
@@ -109,40 +109,39 @@
         </div>
       </section>
       <!--MY portfolio-->
-      <section id="portfolio" class="my-port">
-        <div class="my--portfolio--header"><h2>MY PORTFOLIO</h2></div>
+      <section id="portfolio">
+        <h2>MY PORTFOLIO</h2>
         <div class="main__portfolio">
-          <div id="fetch-1" class="my--port--pic">
-            <div class="small--pic"><img src="/IMG/empty.jpg" alt="teh" /></div>
-            <div class="my--port--text">
-              <p>Project1</p>
-              <p>Project2</p>
-              <p>Project3</p>
-              <h3>Thech Stack</h3>
+          <div id="fetch-1" class="my--port--box"></div>
+
+          <div id="fetch-2" class="my--port--box"></div>
+          <div id="stocks--box" class="my--port--box">
+            <div id="fetch-3"></div>
+            <div id="stockSection">
+              <label for="stocks">Choose a stock:</label>
+
+              <select id="stocks">
+                <option value="XOM">Exxon Mobil Corp. (XOM)</option>
+                <option value="C">Citigroup, Inc. (C)</option>
+                <option value="PFE">Pfizer, Inc. (PFE)</option>
+                <option value="GE">General Electric Co. (GE)</option>
+                <option value="AIG">American Int'l Group, Inc. (AIG)</option>
+                <option value="WMT">Wal-Mart Stores (WMT)</option>
+                <option value="IBM">
+                  International Business Machines (IBM)
+                </option>
+                <option value="BAC">Bank of America Corp. (BAC)</option>
+                <option value="JNJ">Johnson & Johnson (JNJ)</option>
+                <option value="GS">Goldman Sachs Group (GS)</option>
+                <option value="CVX">ChevronTexaco Corp. (CVX)</option>
+                <option value="JPM">J.P. Morgan Chase & Co. (JPM)</option>
+              </select>
+
+              <label for="dateOFStock">Choose date:</label>
+              <input type="date" id="stockDate" name="date" />
+              <button id="setStockButton">Check option</button>
             </div>
           </div>
-          <div id="fetch-2" class="my--port--pic">
-            <div class="small--pic"><img src="/IMG/empty.jpg" alt="teh" /></div>
-            <div class="my--port--text">
-              <p>Project1</p>
-              <p>Project2</p>
-              <p>Project3</p>
-              <h3>Thech Stack</h3>
-            </div>
-          </div>
-          <div id="fetch-3" class="my--port--pic button--pic">
-            <div class="small--pic"><img src="/IMG/empty.jpg" alt="teh" /></div>
-            <div class="my--port--butt"></div>
-          </div>
-          <form id="stock">
-            <p>Kindly Select your favorite stock</p>
-            <input type="radio" name="stock" value="MSFT" id="stock" /> Red
-            <br />
-            <input type="radio" name="stock" value="AAPL" /> blue <br />
-            <input type="radio" name="stock" value="TSLA" />green <br />
-            <input type="radio" name="stock" value="INTC" />pink <br />
-            <input type="submit" value="submit" />
-          </form>
         </div>
       </section>
 
@@ -150,7 +149,7 @@
       <section id="about-me" class="about__me">
         <h2>ABOUT ME</h2>
         <div class="about--pic--text">
-          <div class="image"><img src="/IMG/empty.jpg" alt="about" /></div>
+          <img src="/IMG/empty.jpg" alt="about" />
           <div class="about--p">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -165,7 +164,7 @@
               expedita. Omnis eius nemo asperiores placeat.
             </p>
             <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
-            <button>Contact me</button>
+            <button id="contactButton">Contact me</button>
           </div>
         </div>
       </section>
@@ -194,7 +193,7 @@
             <input type="text" placeholder="Phone*" />
           </div>
         </div>
-        <div class="my--mesage">
+        <div class="my--message">
           <p>My Message*</p>
           <textarea type="message" cols="80" rows="10"></textarea>
         </div>
@@ -202,7 +201,7 @@
       </section>
 
       <footer>
-        <div class="nice">
+        <div class="contactinfo">
           <div class="blue--line--f"></div>
           <h3>NICE TO MEET YOU</h3>
           <div class="blue--line--f"></div>
@@ -212,7 +211,7 @@
           <i class="fab fa-linkedin-in fa-5x"></i>
           <i class="fab fa-instagram fa-5x"></i>
         </div>
-        <p>Copygirht &reg; Aneta Webbie 2018</p>
+        <p>Copygirht &reg; Aneta Webbie 2021</p>
       </footer>
     </section>
   </body>

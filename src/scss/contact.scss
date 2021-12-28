@@ -1,0 +1,61 @@
+@import "colors.scss";
+.contact--me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $green-theme;
+  color: $white;
+  h3 {
+    padding: 3rem;
+  }
+  .my--names input,
+  .my--email input {
+    background-color: $green-theme;
+    border: none;
+    border-bottom: $white 1px solid;
+    color: $white;
+    width: 300px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+  .my--message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 20px;
+
+    p {
+      font-size: 1.3rem;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
+    textarea {
+      background-color: $green-theme;
+      border-color: $white;
+      font-size: 1rem;
+      color: $white;
+      width: 80%;
+      margin-bottom: 10px;
+    }
+  }
+  button {
+    margin: 1rem;
+    border: none;
+    height: 35px;
+    width: 65%;
+    font-size: larger;
+    background-color: $dark-background;
+    color: $white;
+    &:hover {
+      background-color: $text-grey;
+      color: $green-theme;
+    }
+  }
+}
