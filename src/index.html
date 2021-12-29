@@ -13,9 +13,9 @@
     <title>Aneta Webbie</title>
   </head>
 
-  <body id="body">
+  <body id="body" class="body">
     <section id="main">
-      <section id="nav" class="nav">
+      <section id="nav" class="nav hide">
         <ul>
           <a href="#main"><li>HOME</li></a>
           <a href="#skils"><li>SKILS</li></a>
@@ -185,19 +185,24 @@
         <h3>CONTACT ME</h3>
         <div class="my--contact">
           <div class="my--names">
-            <input type="text" placeholder="First Name*" style />
-            <input type="text" placeholder="Last Name*" />
+            <input type="text" placeholder="First Name*" id="firstNameForm" />
+            <input type="text" placeholder="Last Name*" id="lastNameForm" />
           </div>
           <div class="my--email">
-            <input type="text" placeholder="Email*" />
-            <input type="text" placeholder="Phone*" />
+            <input type="text" placeholder="Email*" id="emailForm" />
+            <input type="text" placeholder="Phone*" id="phoneForm" />
           </div>
         </div>
         <div class="my--message">
           <p>My Message*</p>
-          <textarea type="message" cols="80" rows="10"></textarea>
+          <textarea
+            type="message"
+            cols="80"
+            rows="10"
+            id="messageForm"
+          ></textarea>
         </div>
-        <button>Send my message</button>
+        <button id="contactFormSubmitButton">Send my message</button>
       </section>
 
       <footer>

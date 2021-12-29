@@ -65,3 +65,24 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .sales {
+    .sales__text {
+      padding: 20px;
+    }
+    .white-line-halfcircle {
+      display: none;
+    }
+    .black__cover {
+      flex-direction: column;
+
+      .one__halfcircle {
+        width: 100%;
+        .halfcircle {
+          display: none;
+        }
+      }
+    }
+  }
+}

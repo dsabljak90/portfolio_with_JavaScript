@@ -4,22 +4,18 @@ console.log(window.pageYOffset);
 const removeElement = function () {
   const currentPosition = window.pageYOffset;
   if (currentPosition > scrollPosition) {
-    document.getElementById("nav").classList.remove("nav");
-    document.getElementById("nav").classList.add("hide");
+    document.getElementById("nav").style.visibility = "hidden";
   } else {
-    document.getElementById("nav").classList.remove("hide");
-    document.getElementById("nav").classList.add("nav");
+    document.getElementById("nav").style.visibility = "visible";
   }
   scrollPosition = currentPosition <= 0 ? 0 : currentPosition;
 };
 
-//console.log();
-window.addEventListener("scroll", removeElement, 5000);
+window.addEventListener("scroll", removeElement);
 
 // Buttons
 
 const contactButton = document.getElementById("contactButton");
-
 const scroll = function (where) {
   document.getElementById(where).scrollIntoView({
     behavior: "smooth",
@@ -28,6 +24,32 @@ const scroll = function (where) {
 contactButton.onclick = function () {
   scroll("contact");
 };
+
+//Contact form
+const firstName = document.getElementById("firstNameForm");
+const lastName = document.getElementById("lastNameForm");
+const userEmail = document.getElementById("emailForm");
+const userPhone = document.getElementById("phoneForm");
+const userMessage = document.getElementById("messageForm");
+let contactFormSubmitButton = document.getElementById(
+  "contactFormSubmitButton"
+);
+
+const contactSubmit = function () {
+  firstName.value &&
+  lastName.value &&
+  userEmail.value &&
+  userPhone.value &&
+  userMessage.value
+    ? (contactFormSubmitButton.innerText = `Your form is submitted`)
+    : (contactFormSubmitButton.innerText = `Please fullfil all fields`);
+};
+contactFormSubmitButton.onclick = function () {
+  contactSubmit();
+};
+
+//Color change
+
 // News API
 
 // API Sourse https://newsapi.org/ lust add & and specificaton from API descripton.
@@ -44,7 +66,7 @@ fetch(
 // Wether API
 const fetchPlaceTwo = document.getElementById("fetch-2");
 
-// API Sourse https://newsapi.org/ lust add & and specificaton from API descripton.
+// API Source https://newsapi.org/ lust add & and specificaton from API description.
 fetch(
   `http://api.weatherapi.com/v1/current.json?key=23420647a7354abb83b83735212212&q=Prague&aqi=yes`
 )
@@ -74,7 +96,7 @@ function setStock() {
   const stock = stockList.value;
   const date = stockDate.value || lastDate;
   console.log(date);
-  // API Source https://newsapi.org/ lust add & and specificaton from API descripton.
+  // API Source https://newsapi.org/ lust add & and specification from API description.
 
   fetch(
     `https://api.polygon.io/v1/open-close/${stock}/${date}?adjusted=true&apiKey=8TvIu_PxBWFhvO4vQ8iTPtCAf4pYF4Gn`
@@ -98,7 +120,7 @@ const stockList = (document.getElementById("setStockButton").onclick =
     setStock();
   });
 
-// API Sourse https://newsapi.org/ lust add & and specificaton from API descripton.
+// API Source https://newsapi.org/ lust add & and specifications from API description.
 
 fetch(
   `https://api.polygon.io/v1/open-close/MSFT/2021-12-21?adjusted=true&apiKey=8TvIu_PxBWFhvO4vQ8iTPtCAf4pYF4Gn`

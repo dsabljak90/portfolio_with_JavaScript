@@ -59,3 +59,19 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .contact--me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .my--names input,
+    .my--email input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}
